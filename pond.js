@@ -11,9 +11,17 @@ while (true) {
   } else {
     angle += 1;
   }
-  if (getX() < -95 || getX() > 95 || getY() < -95 || getY() > 95) {
+  if (getX() < -95) {
     stop();
+    swim(0);
+  } else if (getX() > 95) {
+    stop();
+    swim(180);
+  } else if (getY() < -95) {
+    stop();
+    swim(90);
+  } else if (getY() > 95) {
+    stop();
+    swim(270);
   }
 }
-
-
