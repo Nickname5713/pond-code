@@ -7,21 +7,18 @@ while (true) {
   moveangle = 180 - angle;
   if (dist <= 70) {
     cannon(angle, dist);
-    swim(moveangle);
+    if (getX() < -80) {
+      stop();
+    } else if (getX() > 80) {
+      stop();
+    } else if (getY() < -80) {
+      stop();
+    } else if (getY() > 80) {
+      stop();
+    } else {
+      swim(moveangle);
+    }
   } else {
     angle += 1;
-  }
-  if (getX() < -95) {
-    stop();
-    swim(0);
-  } else if (getX() > 95) {
-    stop();
-    swim(180);
-  } else if (getY() < -95) {
-    stop();
-    swim(90);
-  } else if (getY() > 95) {
-    stop();
-    swim(270);
   }
 }
